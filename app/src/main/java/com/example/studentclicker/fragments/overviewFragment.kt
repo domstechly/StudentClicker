@@ -159,7 +159,7 @@ class overviewFragment :Fragment(){
         val ic8=Industries(
             8,
             profit = 8000,
-            coefficient = 1.08,
+            coefficient = 1.07,
             cost = 15000,
             actnumber = 1,
             threshold = 1,
