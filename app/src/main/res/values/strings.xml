@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Student Clicker</string>
+    <string name="Pub_Counter">1s</string>
+    <string name="Pub2_Counter">3s</string>
+    <string name="Pub3_Counter">6s</string>
+    <string name="Pub4_Counter">12s</string>
+    <string name="Pub5_Counter">24s</string>
+    <string name="real_profit">3.63</string>
+    <string name="threshold">1/25</string>
+</resources>

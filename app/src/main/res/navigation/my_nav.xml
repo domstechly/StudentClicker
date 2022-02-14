@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/Overview">
+
+    <fragment
+        android:id="@+id/Overview"
+        android:name="com.example.studentclicker.fragments.overviewFragment"
+        tools:layout="@layout/overview">
+        <action
+            android:id="@+id/action_overview"
+            app:destination="@id/Overview" />
+    <argument
+        android:name="currentIndustry"
+        app:argType="com.example.studentclicker.model.Industries" />
+
+    </fragment>
+</navigation>

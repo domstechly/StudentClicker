@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.overviewFragment">
+
+    <RelativeLayout
+        android:id="@+id/Pub_layout2"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        app:cardElevation="1dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Points_Counter2">
+
+        <TextView
+            android:id="@+id/Pub_Counter2"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/progressBar2"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:text="@string/Pub_Counter"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+
+        <RelativeLayout
+            android:id="@+id/Add_Pub2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/progressBar2"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@id/Pub_Counter2"
+            android:layout_toEndOf="@id/Pub_image2"
+            android:background="@drawable/custom_button">
+
+
+            <TextView
+                android:id="@+id/Kup2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="5dp"
+                android:text="Kup" />
+
+            <TextView
+                android:id="@+id/Purchase_Number2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="x1" />
+
+            <TextView
+                android:id="@+id/Purchase_Price2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="4" />
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_toEndOf="@id/Pub_image2"
+            android:progressDrawable="@drawable/progress_bar" />
+
+        <TextView
+            android:id="@+id/Pub_Profit2"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_above="@id/Add_Pub2"
+            android:layout_below="@id/progressBar2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="81dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@id/Pub_image2"
+            android:text="@string/real_profit"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/Pub_image2"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:src="@drawable/icon_temp" />
+
+        <TextView
+            android:id="@+id/Pub_Number2"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/rounded_textview"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/threshold"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/Pub2"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="PUBY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Points_Counter2" />
+
+    <Button
+        android:id="@+id/multiplier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="1x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Points_Counter2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/multiplier2"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/multiplier2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
