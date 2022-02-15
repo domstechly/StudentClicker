@@ -7,6 +7,7 @@
     android:layout_margin="5dp"
     app:cardCornerRadius="5dp"
     app:cardElevation="3dp"
+    android:background="@color/darkgray"
     android:id="@+id/rowLayout">
 
     <RelativeLayout
@@ -69,6 +70,7 @@
             android:layout_height="60dp"
             android:layout_below="@id/progressBar"
             android:layout_alignParentBottom="true"
+            android:layout_margin="5dp"
             android:layout_toStartOf="@id/Pub_Counter"
             android:layout_toEndOf="@id/Pub_image"
             android:background="@drawable/custom_button">
@@ -116,6 +118,7 @@
             style="@android:style/Widget.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_toEndOf="@id/Pub_image"
@@ -141,7 +144,8 @@
 
         <ImageView
             android:id="@+id/Pub_image"
-            android:layout_width="80dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="75dp"
             android:layout_height="100dp"
             android:src="@drawable/icon1" />
 

@@ -74,7 +74,6 @@ class ListAdapter(val vm:IndustriesViewModel,val view:View,val vmp:PointsViewMod
     fun purchase_number(coef:Double,power:Int,profit:Int,multiplier:String): String {
         var cost:Double
         if(multiplier=="max"){
-            val real_multiplier=1
             var cost=Math.pow(coef,power.toDouble())*profit
             var real_power=power
             while(cost+Math.pow(coef,real_power.toDouble())*profit<pointsList[0].points)
@@ -131,6 +130,13 @@ class ListAdapter(val vm:IndustriesViewModel,val view:View,val vmp:PointsViewMod
         }
         if(currentItem.id==5){
             holder.itemView.Pub_image.setImageResource(R.drawable.icon5)
+        }
+        if(currentItem.unlock<pointsList[0].points&&currentItem.unlocked!=1)
+        {
+            holder.itemView.rowLayout.setBackgroundResource(R.color.orange)
+        }
+        else{
+            holder.itemView.rowLayout.setBackgroundResource(R.color.darkgray)
         }
         //holder.itemView.Pub_Profit.text=calculatecost(currentItem.coefficient,currentItem.actnumber,currentItem.profit).toString()
         holder.itemView.Pub_Profit.text=calculateproduction(currentItem.actnumber,currentItem.profit).toString()
