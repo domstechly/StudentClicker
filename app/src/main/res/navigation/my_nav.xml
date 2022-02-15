@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/Overview"
         android:name="com.example.studentclicker.fragments.overviewFragment"
-        tools:layout="@layout/overview">
+        tools:layout="@layout/overview_rv">
         <action
             android:id="@+id/action_overview"
             app:destination="@id/Overview" />

@@ -84,9 +84,9 @@ class ListAdapter(val vm:IndustriesViewModel,val view:View,val vmp:PointsViewMod
             if(real_power-power==0){
                 return "x1"
             }
-            else{
+            else if(pointsList[0].points>cost){
             return "x"+(real_power-power).toString()
-        }}
+        }else {return "x"+(real_power-power-1).toString()}}
         else{
             return multiplier
         }
