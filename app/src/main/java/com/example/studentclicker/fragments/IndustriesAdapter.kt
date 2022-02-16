@@ -1,6 +1,7 @@
 package com.example.studentclicker.fragments
 
 import android.animation.ObjectAnimator
+import android.app.Application
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -18,6 +19,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.studentclicker.MainActivity
 import com.example.studentclicker.R
 import com.example.studentclicker.model.Industries
 import com.example.studentclicker.model.Points
@@ -112,7 +114,13 @@ class ListAdapter(val vm:IndustriesViewModel,val view:View,val vmp:PointsViewMod
             return (t/h).toBigDecimal().setScale(2,RoundingMode.HALF_EVEN).toString()+"h"
         }
     }
+    fun calculateproduction(number:Int,profit:Int,multi:Int):Int{
+        return number*profit*multi
+    }
+
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+
+
         val currentItem = industriesList[position]
         val point=pointsList[0]
 
@@ -179,7 +187,6 @@ class ListAdapter(val vm:IndustriesViewModel,val view:View,val vmp:PointsViewMod
         holder.itemView.Pub_Counter.text=calculatetime(currentItem.time,currentItem.threshold)
         pubcounter = holder.itemView.findViewById(R.id.Pub_Counter)
         imagetap=holder.itemView.findViewById(R.id.Pub_image)
-
         holder.itemView.Add_Pub.setOnClickListener{
             if(point.points>=holder.itemView.Add_Pub.Purchase_Price.text.toString().replace("x","").toLong()) {
                 val add =
@@ -201,8 +208,7 @@ class ListAdapter(val vm:IndustriesViewModel,val view:View,val vmp:PointsViewMod
                 )
             //val minus:Long=
                 vmp.updateIndustry(Points(point.id,(point.points-holder.itemView.Add_Pub.Purchase_Price.text.toString().replace("x","").toLong())))
-                        notifyDataSetChanged()
-        }
+                }
         }
         /*holder.itemView.rowLayout.idEditIcon.setOnClickListener{
 
@@ -230,7 +236,6 @@ class ListAdapter(val vm:IndustriesViewModel,val view:View,val vmp:PointsViewMod
                 Handler().postDelayed({ holder.itemView.Pub_image.isEnabled = true
                     val point=pointsList[0].points
                     vmp.updateIndustry(Points(1,point+calculateproduction(currentItem.actnumber,currentItem.profit).toString().toLong()))
-
                 }, time)}
 
 
@@ -258,10 +263,76 @@ class ListAdapter(val vm:IndustriesViewModel,val view:View,val vmp:PointsViewMod
             }
         }
     }
-    fun Minus1(first:Long,second:Long):Long{
-        return first-second
-    }
     fun setData(industries: List<Industries>){
+        if(industries.size==0) {
+            if(industriesList.size==0){
+                val ic=Industries(
+                    1,
+                    profit = 1,
+                    coefficient = 1.05,
+                    cost = 4,
+                    actnumber = 1,
+                    threshold = 1,
+                    time=1.0,
+                    unlock = 0,
+                    unlocked = 1
+                )
+                val ic2=Industries(
+                    2,
+                    profit = 5,
+                    coefficient = 1.12,
+                    cost = 10,
+                    actnumber = 1,
+                    threshold = 1,
+                    time=3.0,
+                    unlock = 100,
+                    unlocked = 0
+                )
+                val ic3=Industries(
+                    3,
+                    profit = 15,
+                    coefficient = 1.11,
+                    cost = 50,
+                    actnumber = 1,
+                    threshold = 1,
+                    time=10.0,
+                    unlock = 5000,
+                    unlocked = 0
+                )
+                val ic4=Industries(
+                    4,
+                    profit = 80,
+                    coefficient = 1.10,
+                    cost = 400,
+                    actnumber = 1,
+                    threshold = 1,
+                    time=40.0,
+                    unlock = 20000,
+                    unlocked = 0
+                )
+                val ic5=Industries(
+                    5,
+                    profit = 300,
+                    coefficient = 1.09,
+                    cost = 1500,
+                    actnumber = 1,
+                    threshold = 1,
+                    time=120.0,
+                    unlock = 50000,
+                    unlocked = 0
+                )
+                val pointadd=Points(
+                    1,
+                    0
+                )
+                vm.addIndustry(ic)
+                vm.addIndustry(ic2)
+                vm.addIndustry(ic3)
+                vm.addIndustry(ic4)
+                vm.addIndustry(ic5)
+                vmp.addIndustry(pointadd)
+            }
+        }
         this.industriesList = industries
         notifyDataSetChanged()
     }

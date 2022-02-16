@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.studentclicker.model.Industries
 
-@Database(entities = [Industries::class], version = 13, exportSchema = false)
+@Database(entities = [Industries::class], version = 18, exportSchema = false)
 abstract class IndustriesDatabase : RoomDatabase() {
 
     abstract fun industriesDao(): IndustriesDao

@@ -4,8 +4,8 @@ import android.animation.ObjectAnimator
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.app.AlertDialog
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.View
@@ -36,6 +36,10 @@ import kotlinx.android.synthetic.main.overview.view.*
 import kotlinx.android.synthetic.main.overview_rv.view.*
 import kotlin.math.round
 import kotlin.math.roundToLong
+import android.content.Context.MODE_PRIVATE
+
+
+
 
 
 
